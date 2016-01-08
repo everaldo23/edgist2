@@ -1,0 +1,11 @@
+<div class="hero-unit">
+  <h1>'Allo, 'Allo!</h1>
+  <p>You now have</p>
+  <ul>
+      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+  </ul>
+  <a  ng-hide="signedIn" ui-sref="/auth">Register</a>
+  <input type="button" class="btn btn-danger" ng-show="signedIn" value="Log Out">
+  <p>{{signedIn}}</p>
+  <h3>Enjoy coding! - Yeoman</h3>
+</div>
