@@ -16,8 +16,7 @@
         <!-- endbuild -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
     <!-- endbower -->
 </head>
   <body ng-app="edgist2App">
@@ -34,13 +33,13 @@
     <div ng-controller="AuthCtrl" ng-cloak class="md-inline-form">
       <md-content md-theme="default" >
         <md-toolbar>
-          <div class="md-toolbar-tools">
-            <h2>
-              <span>Edgist</span>
+          <div class="md-toolbar-tools lock-size">
+            <h2 ui-sref="/index">
+              Edgist
             </h2>
             <span flex></span>
-            <md-button class="md-fab md-accent" aria-label="Settings">
-              <md-icon md-svg-icon="images/menu.svg"></md-icon>
+            <md-button class="md-fab md-accent" aria-label="Shop" ui-sref="/product">
+              <md-icon md-svg-icon="images/bag.svg"></md-icon>
             </md-button>
             <md-button  ng-show="signedIn" ng-controller="MainCtrl" class="md-raised md-warn" aria-label="Log Out" ng-click="logOut()">
               Log Out
@@ -89,12 +88,14 @@
         <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script src="bower_components/angular-messages/angular-messages.js"></script>
         <script src="bower_components/angular-material/angular-material.js"></script>
+        <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
         <!-- endbower -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/auth.js"></script>
+        <script src="scripts/controllers/product.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -7,7 +7,8 @@
   'ngSanitize',
     'ng-token-auth',
   'ui.router',
-    'ngMaterial'
+    'ngMaterial',
+    'xeditable'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $authProvider, $httpProvider, $mdThemingProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -21,10 +22,18 @@
       .state('/auth', {
         templateUrl: 'views/auth.html',
         controller: 'AuthCtrl'
+      })
+      .state('/product', {
+        url: '/products',
+        templateUrl: 'views/product.html',
+        controller: 'ProductCtrl'
       });
       $httpProvider.defaults.withCredentials = true;
     $mdThemingProvider.theme('default')
-      .accentPalette('red')
+      .primaryPalette('blue')
+      .accentPalette('red');
+    $mdThemingProvider.theme('dark')
+      .primaryPalette('yellow')
       .dark();
     $authProvider.configure({
       apiUrl: 'http://localhost:3000'
