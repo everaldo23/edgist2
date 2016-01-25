@@ -1,10 +1,4 @@
 <p>Products</p>
-<form ng-submit="addProduct(name,price)">
-  <input type="text" ng-model="name" placeholder="Name" required>
-  <input type="number" ng-model="price" value="0" placeholder="Price" step="any" required>
-  <input class="btn-primary" type="submit" value="Add">
-</form>
-{{name}}{{price}}
 <div>
   <table>
     <input type="submit" class="btn-danger" ng-click="removeProducts()" value="Clear list">
@@ -20,8 +14,13 @@
         <td><p>{{thing.name}}</p></td>
         <td><p editable-text="thing.price" onaftersave="editProduct(thing.id,thing.name,thing.price)">{{thing.price | currency : "RM " }}</p></td>
         <td>
-          <input type="submit" class="btn-danger" ng-click="ditchProduct(thing.id)" value="Remove">
+          <md-button class="md-fab md-raised md-mini md-warn" aria-label="Remove" ng-click="ditchProduct(thing.id)"><md-icon md-svg-icon="images/remove.svg"></md-icon></md-button>
         </td>
+      </tr>
+      <tr>
+        <td><md-input-container><input type="text" ng-model="name" placeholder="Name" required></md-input-container></td>
+        <td><md-input-container><input type="number" ng-model="price" value="0" placeholder="Price" step="any" required></md-input-container></td>
+        <td><md-button class="md-fab md-raised md-mini md-primary" aria-label="Add" ng-click="addProduct(name,price)"><md-icon md-svg-icon="images/add.svg"></md-icon></md-button></td>
       </tr>
     </td>
   </table>

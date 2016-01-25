@@ -7,3 +7,6 @@ img.indexpic {
   background-repeat: no-repeat;
   background-size: contain;
 }
+md-input-container.editable-controls {
+  padding: 0;
+}

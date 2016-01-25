@@ -39,7 +39,11 @@
       apiUrl: 'http://localhost:3000'
     });
   })
-    .run(function($auth, $rootScope){
+    .run(function($auth, $rootScope, editableOptions, editableThemes){
+      editableOptions.theme = 'default';
+      editableThemes['default'].controlsTpl= '<md-input-container class="editable-controls" ng-class="{\'md-input-invalid\': $error}"></md-input-container>';
+      editableThemes['default'].submitTpl = '<md-button class="md-fab md-mini md-raised md-primary" aria-label="Edit" type="submit"><md-icon md-svg-icon="images/check.svg"></md-icon></md-button>';
+      editableThemes['default'].cancelTpl = '<md-button class="md-fab md-mini md-raised md-accent" aria-label="Cancel" type="button" ng-click="$form.$cancel()"><md-icon md-svg-icon="images/clear.svg"></md-icon></md-button>';
       console.log($auth.validateUser());
       $rootScope.$on('auth:validation-success', function(){
         $rootScope.signedIn = true;
